@@ -1,0 +1,1 @@
+export const Add10 = (val: number) => val + 10; 

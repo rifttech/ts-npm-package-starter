@@ -1,0 +1,43 @@
+{
+  "name": "ts-npm-package-starter",
+  "version": "0.0.1",
+  "description": "Typescript NPM package starter",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "test": "jest --config jestconfig.json",
+    "prepare" : "npm run build",
+    "prepublishOnly" : "npm test && npm run lint",
+    "preversion" : "npm run lint",
+    "version" : "npm run format && git add -A src",
+    "postversion" : "git push && git push --tags"
+  },
+  "keywords": [
+    "starter", "typescript", "npm"
+  ],
+  "homepage": "https://github.com/rifttech/ts-npm-package-starter#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rifttech/ts-npm-package-starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rifttech/ts-npm-package-starter/issues"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "author": "Abramov Arthur",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^24.0.13",
+    "jest": "^24.8.0",
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.17.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.5.1"
+  }
+}
